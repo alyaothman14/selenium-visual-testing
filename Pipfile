@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+selenium = "==4.9.0"
+pytest = "==7.3.1"
+webdriver-manager = "*"
+allure-pytest = "*"
+allure-python-commons = "*"
+pytest-rerunfailures = "*"
+pixelmatch = "*"
+pillow = "*"
+numpy = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

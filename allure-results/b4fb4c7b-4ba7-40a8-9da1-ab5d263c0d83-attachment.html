@@ -1,0 +1,47 @@
+
+        <div class="slider">
+        <div class="image-wrapper">
+            <img src="/Users/alya/Documents/sporty/sporty/selenium-testing-lib-python/tests/test_login/test_visual_login_fail[chrome]-actual.png" alt="Expected Screenshot">
+        </div>
+        <div class="image-wrapper">
+            <img src='/Users/alya/Documents/sporty/sporty/selenium-testing-lib-python/tests/test_login/test_visual_login_fail[chrome]-baseline.png' alt="Actual Screenshot">
+        </div>
+        <div class="slider-handle"></div>
+        </div>
+
+        <style>
+        .slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        }
+
+        .image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        }
+
+        .image-wrapper img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        }
+
+        .slider-handle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background-color: red;
+        z-index: 1;
+        cursor: ew-resize;
+        }
+        </style>
+        
