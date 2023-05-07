@@ -43,4 +43,12 @@ allure serve
 #You can find the allure results [here](https://alyaothman14.github.io/selenium-python/visual/)
 
 Example:
-Commit from pipeline https://github.com/alyaothman14/selenium-visual-testing/pull/1/commits/67642b526ccce1592cd717eda5b83e3a8cb2f1ee
+Snapshot Commit from pipeline [here](https://github.com/alyaothman14/selenium-visual-testing/pull/1/commits/67642b526ccce1592cd717eda5b83e3a8cb2f1ee)
+
+Example of difference in report
+![image](https://user-images.githubusercontent.com/87079479/236699643-9885c5e7-134b-4ff7-a126-28a2310b6eb7.png)
+
+Ideas for improvement:
+- Overlay the actual and expected image with a slider in the report to be easy to see the difference
+- Only commit the snapshot if there is a change between the new updated snapshot and the baseline
+
