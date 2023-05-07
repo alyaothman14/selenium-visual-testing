@@ -34,7 +34,7 @@ jobs:
       - name: Update snapshot baseline
         if: contains(github.event.pull_request.labels.*.name, 'update-snapshot')
         run: pipenv run pytest --update-snapshot=True --reruns 1 -m Visual -k ${{matrix.browser}} -vv
-      - if: contains(github.event.pull_request.labels.*.name, 'pw-snapshot-update')
+      - if: contains(github.event.pull_request.labels.*.name, 'update-snapshot')
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'Update Snapshots Baseline ${{ matrix.browser }}'
@@ -78,11 +78,11 @@ jobs:
             gh_pages: gh-pages
             allure_history: allure-history
             keep_reports: 5
-        - name: Deploy report to Github Pages
-          if: always()
-          uses: peaceiris/actions-gh-pages@v3
-          with:
-            PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            PUBLISH_BRANCH: gh-pages
-            PUBLISH_DIR: allure-history
+        # - name: Deploy report to Github Pages
+        #   if: always()
+        #   uses: peaceiris/actions-gh-pages@v3
+        #   with:
+        #     PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #     PUBLISH_BRANCH: gh-pages
+        #     PUBLISH_DIR: allure-history
   
