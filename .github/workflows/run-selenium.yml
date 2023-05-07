@@ -15,6 +15,8 @@ jobs:
         browser: [chrome, firefox]
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -33,12 +35,12 @@ jobs:
           pipenv install
       - name: Update snapshot baseline
         if: contains(github.event.pull_request.labels.*.name, 'update-snapshot')
-        run: pipenv run pytest --update-snaspshot --reruns 1 -m Visual -k ${{matrix.browser}} -vv
-      - if: contains(github.event.pull_request.labels.*.name, 'pw-snapshot-update')
+        run: pipenv run pytest --update-snapshot=True --reruns 1 -m Visual -k ${{matrix.browser}} -vv
+      - if: contains(github.event.pull_request.labels.*.name, 'update-snapshot')
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'Update Snapshots Baseline ${{ matrix.browser }}'
-          file_pattern: '*.png'
+          file_pattern: "*.png"
       - name: Run Selenium tests on ${{matrix.browser}}
         run: pipenv run pytest --reruns 1 -m Visual -k ${{matrix.browser}} -vv
       - name: Upload Allure report

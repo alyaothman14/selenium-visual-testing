@@ -13,7 +13,15 @@ import allure
 
 '''
 Utility to check for screenshot difference
+request: test request context
+driver
+threshold: allowed threshold for image difference, default 0.1
+masked_locator: list of locator tuple that should be masked in the screenshot
+z-index: z-index for the mask default 2000
+full_screenshot: take a full screenshot, default false
 
+Return True or False
+Raise an exception if there is a pixel difference
 '''
 def expect_to_have_screenshot(request: pytest.FixtureRequest,driver:Union[Chrome, Firefox],**kwargs)-> bool:
     test_name=request.node.name
@@ -38,6 +46,8 @@ def expect_to_have_screenshot(request: pytest.FixtureRequest,driver:Union[Chrome
         allure.step("Take baseline snapshot")
         if not os.path.exists(directory):
             os.makedirs(directory)
+        if os.path.exists(expected_snapshot_location):
+            os.remove(expected_snapshot_location)    
         if('full_screenshot' in kwargs):
             driver.save_full_page_screenshot(expected_snapshot_location)
             return True
@@ -99,7 +109,6 @@ def wait_for_network_ideal(driver:Union[Chrome, Firefox]):
             break
         else:
             network_count=current_count
-            print(network_count)
             retry=retry+1
             time.sleep(5)
 
