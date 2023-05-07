@@ -38,6 +38,8 @@ def expect_to_have_screenshot(request: pytest.FixtureRequest,driver:Union[Chrome
         allure.step("Take baseline snapshot")
         if not os.path.exists(directory):
             os.makedirs(directory)
+        if os.path.exists(expected_snapshot_location):
+            os.remove(expected_snapshot_location)    
         if('full_screenshot' in kwargs):
             driver.save_full_page_screenshot(expected_snapshot_location)
             return True

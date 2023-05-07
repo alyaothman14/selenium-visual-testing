@@ -33,7 +33,7 @@ jobs:
           pipenv install
       - name: Update snapshot baseline
         if: contains(github.event.pull_request.labels.*.name, 'update-snapshot')
-        run: pipenv run pytest --update-snaspshot --reruns 1 -m Visual -k ${{matrix.browser}} -vv
+        run: pipenv run pytest --update-snapshot --reruns 1 -m Visual -k ${{matrix.browser}} -vv
       - if: contains(github.event.pull_request.labels.*.name, 'pw-snapshot-update')
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
