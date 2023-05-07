@@ -15,6 +15,8 @@ jobs:
         browser: [chrome, firefox]
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -39,6 +41,8 @@ jobs:
         with:
           commit_message: 'Update Snapshots Baseline ${{ matrix.browser }}'
           file_pattern: '*.png'
+      - run: pwd
+      - run: ls -R
       - name: Run Selenium tests on ${{matrix.browser}}
         run: pipenv run pytest --reruns 1 -m Visual -k ${{matrix.browser}} -vv
       - name: Upload Allure report
