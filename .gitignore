@@ -2,7 +2,8 @@
 allure-results/
 .DS_Store
 vscode
-*.png
+*actual.png
+*diff.png
 __pycache__/
 *.py[cod]
 *$py.class
