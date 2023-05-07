@@ -40,7 +40,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'Update Snapshots Baseline ${{ matrix.browser }}'
-          file_pattern: '/tests/**/*.png'
+          file_pattern: '${{ github.workspace }}/tests/**/*.png'
       - run: pwd
       - run: ls -R
       - name: Run Selenium tests on ${{matrix.browser}}
