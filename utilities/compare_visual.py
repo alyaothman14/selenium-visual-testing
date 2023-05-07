@@ -101,7 +101,6 @@ def wait_for_network_ideal(driver:Union[Chrome, Firefox]):
             break
         else:
             network_count=current_count
-            print(network_count)
             retry=retry+1
             time.sleep(5)
 
