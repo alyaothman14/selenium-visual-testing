@@ -40,7 +40,7 @@ allure serve
   ``` 
 
 
-### You can find the allure results [here](https://alyaothman14.github.io/selenium-python/visual/)
+### You can find the allure results [here](https://alyaothman14.github.io/selenium-visual-testing/visual/)
 
 ### Example of Commit:
 Snapshot Commit from pipeline [here](https://github.com/alyaothman14/selenium-visual-testing/pull/1/commits/67642b526ccce1592cd717eda5b83e3a8cb2f1ee)
