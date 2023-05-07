@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun May 07 19:46:30 GMT 2023","Sun May 07 19:46:48 GMT 2023","17699","tests","test_login","TestLogin","","","Visual testing login page, should pass","Visual testing login page, should pass"
-"broken","Sun May 07 19:45:29 GMT 2023","Sun May 07 19:46:00 GMT 2023","31667","tests","test_login","TestLogin","","","Visual testing login page, should fail","Visual testing login page, should fail"
-"broken","Sun May 07 19:44:48 GMT 2023","Sun May 07 19:45:11 GMT 2023","22501","tests","test_login","TestLogin","","","Visual testing login page, should fail","Visual testing login page, should fail"
-"passed","Sun May 07 19:45:38 GMT 2023","Sun May 07 19:45:55 GMT 2023","16545","tests","test_login","TestLogin","","","Visual testing login page, should pass","Visual testing login page, should pass"
