@@ -13,7 +13,15 @@ import allure
 
 '''
 Utility to check for screenshot difference
+request: test request context
+driver
+threshold: allowed threshold for image difference, default 0.1
+masked_locator: list of locator tuple that should be masked in the screenshot
+z-index: z-index for the mask default 2000
+full_screenshot: take a full screenshot, default false
 
+Return True or False
+Raise an exception if there is a pixel difference
 '''
 def expect_to_have_screenshot(request: pytest.FixtureRequest,driver:Union[Chrome, Firefox],**kwargs)-> bool:
     test_name=request.node.name
