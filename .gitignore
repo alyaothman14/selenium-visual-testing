@@ -1,9 +1,8 @@
 # Byte-compiled / optimized / DLL files
-allure-results
+allure-results/
 .DS_Store
 vscode
-*-actual.png
-*-diff.png
+*.png
 __pycache__/
 *.py[cod]
 *$py.class
