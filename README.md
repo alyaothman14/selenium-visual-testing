@@ -28,7 +28,7 @@ pipenv run pytest to run all
 allure serve
 ```
 
-#Use visual testing
+## Use visual testing
 ```bash
  assert expect_to_have_screenshot(request,self.driver)
  ```
@@ -40,15 +40,15 @@ allure serve
   ``` 
 
 
-#You can find the allure results [here](https://alyaothman14.github.io/selenium-python/visual/)
+### You can find the allure results [here](https://alyaothman14.github.io/selenium-python/visual/)
 
-#Example of Commit:
+### Example of Commit:
 Snapshot Commit from pipeline [here](https://github.com/alyaothman14/selenium-visual-testing/pull/1/commits/67642b526ccce1592cd717eda5b83e3a8cb2f1ee)
 
-#Example of Difference in report
+### Example of Difference in report
 ![image](https://user-images.githubusercontent.com/87079479/236699643-9885c5e7-134b-4ff7-a126-28a2310b6eb7.png)
 
-#Ideas for improvement:
+#### Ideas for improvement:
 - Overlay the actual and expected image with a slider in the report to be easy to see the difference
 - Only commit the snapshot if there is a change between the new updated snapshot and the baseline
 
